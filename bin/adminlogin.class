@@ -1,0 +1,45 @@
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.border.EmptyBorder;
+
+public class AdminLogin extends JFrame {
+   static AdminLogin frame;
+   private JPanel contentPane;
+   private JTextField textField;
+   private JPasswordField passwordField;
+
+   public static void main(String[] args) {
+      EventQueue.invokeLater(new AdminLogin$1());
+   }
+
+   public AdminLogin() {
+      this.setDefaultCloseOperation(3);
+      this.setBounds(100, 100, 450, 300);
+      this.contentPane = new JPanel();
+      this.contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+      this.setContentPane(this.contentPane);
+      JLabel lblAdminLoginForm = new JLabel("Admin Login Form");
+      lblAdminLoginForm.setForeground(Color.GRAY);
+      lblAdminLoginForm.setFont(new Font("Tahoma", 0, 18));
+      JLabel lblEnterName = new JLabel("Enter Name:");
+      JLabel lblEnterPassword = new JLabel("Enter Password:");
+      this.textField = new JTextField();
+      this.textField.setColumns(10);
+      JButton btnLogin = new JButton("Login");
+      btnLogin.addActionListener(new AdminLogin$2(this));
+      this.passwordField = new JPasswordField();
+      GroupLayout gl_contentPane = new GroupLayout(this.contentPane);
+      gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING).addGroup(gl_contentPane.createSequentialGroup().addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane.createSequentialGroup().addGap(124).addComponent(lblAdminLoginForm)).addGroup(gl_contentPane.createSequentialGroup().addGap(19).addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addComponent(lblEnterName).addComponent(lblEnterPassword)).addGap(47).addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING, false).addComponent(this.passwordField).addComponent(this.textField, -1, 172, 32767)))).addContainerGap(107, 32767)).addGroup(gl_contentPane.createSequentialGroup().addContainerGap(187, 32767).addComponent(btnLogin, -2, 86, -2).addGap(151)));
+      gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane.createSequentialGroup().addComponent(lblAdminLoginForm).addGap(26).addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(lblEnterName).addComponent(this.textField, -2, -1, -2)).addGap(28).addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(lblEnterPassword).addComponent(this.passwordField, -2, -1, -2)).addGap(18).addComponent(btnLogin, -2, 37, -2).addContainerGap(80, 32767)));
+      this.contentPane.setLayout(gl_contentPane);
+   }
+}
